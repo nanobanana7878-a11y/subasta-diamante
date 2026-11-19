@@ -394,7 +394,7 @@ function AuthModal({ db, setDb, onClose, onLogin }){
     if(!/^[a-z0-9_]{3,20}$/.test(user)){ setErr("Usuario: 3-20 letras, números o _ (sin espacios)."); return; }
     if(p.length<6){ setErr("La contraseña necesita al menos 6 caracteres."); return; }
     setErr("");
-    const email=user+"@subastadiamante.app";
+    const email="subasta."+user+"@gmail.com";
     const res = tab==="register"
       ? await sb.auth.signUp({email,password:p,options:{data:{username:user}}})
       : await sb.auth.signInWithPassword({email,password:p});
